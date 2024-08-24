@@ -1,0 +1,28 @@
+<div class="profile-header">
+    <h3>{{ currentUser.firstName }} {{ currentUser.lastName }}</h3>
+    <h6>{{ currentUser.userName }}</h6>
+  </div>
+  
+  <div class="user-posts">
+    <h4>Your Posts</h4>
+    <hr>
+    <div *ngIf="userPosts.length > 0; else noPosts">
+      <div *ngFor="let post of userPosts" class="post">
+        <h6>{{ post.status }}</h6>
+        <p>{{ post.userName }} | {{ post.createdAt | date:'M/d/y' }}</p>
+        <div class="post-actions">
+          <button (click)="editPost(post.postId)" mat-icon-button matTooltip="Edit Post">
+            <mat-icon>edit</mat-icon>
+          </button>
+          <button (click)="deletePost(post.postId)" mat-icon-button matTooltip="Delete Post">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </div>
+        <hr>
+      </div>
+    </div>
+    
+    <ng-template #noPosts>
+      <p>You have not created any posts yet.</p>
+    </ng-template>
+  </div>

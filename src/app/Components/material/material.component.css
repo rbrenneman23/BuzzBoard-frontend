@@ -1,0 +1,21 @@
+.content {
+  padding-top: 84px;
+  padding-left: 16px;
+  padding-bottom: 16px;
+  padding-right: 16px;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  background-color: var(--toolbar);
+  position: fixed;
+  z-index: 1000;
+  color: #FFFFFF;
+}
+
+mat-icon {
+  color: var(--icons);
+}

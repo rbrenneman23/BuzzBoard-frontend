@@ -1,0 +1,9 @@
+<form (ngSubmit)="createPost()">
+    <h4>Create New Post</h4>
+    <span>Status: </span>
+    <input placeholder="Update your status" type="text" name="post" [(ngModel)]="newPost.status"><br><br>
+
+    <button>
+        Post!
+    </button>
+</form>

@@ -1,0 +1,28 @@
+<mat-toolbar class="toolbar">
+    <span>BuzzBoard</span>
+    <span class="example-spacer"></span>
+
+    <button [routerLink]="['/post']" mat-icon-button color="accent" matTooltip="View Post Feed">
+        <mat-icon>list</mat-icon>
+    </button>
+    <button *ngIf="isAuthenticated" [routerLink]="['/post/new']" mat-icon-button color="accent" matTooltip="Create Post">
+        <mat-icon>create</mat-icon>
+    </button>
+    <button *ngIf="!isAuthenticated" [routerLink]="['/register']" mat-icon-button color="accent" matTooltip="Register">
+        <mat-icon>how_to_reg</mat-icon>
+    </button>
+
+    <button *ngIf="isAuthenticated" [routerLink]="['/profile', currentUserId]" mat-icon-button color="accent" matTooltip="Go to Profile">
+        <mat-icon>person</mat-icon>
+      </button>
+
+    <button *ngIf="!isAuthenticated" [routerLink]="['/login']" mat-icon-button color="accent" matTooltip="Login">
+        <mat-icon>login</mat-icon>
+    </button>
+    <button *ngIf="isAuthenticated" mat-icon-button color="accent" (click)="logout()" matTooltip="Logout">
+        <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+<div class="content">
+    <router-outlet></router-outlet>
+</div>

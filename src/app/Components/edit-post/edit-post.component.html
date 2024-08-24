@@ -1,0 +1,7 @@
+<h4>Edit Post</h4>
+<form #form="ngForm" (ngSubmit)="onSubmit()" class="labels">
+  <label>Status: </label>
+  <input type="text" name="name" [(ngModel)]="currentPost.status"><br><br>
+
+  <button type="submit">Confirm Changes</button>
+</form>
